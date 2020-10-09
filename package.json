@@ -1,0 +1,22 @@
+{
+  "name": "c-jest-react",
+  "version": "1.0.0",
+  "description": "unit testing with JestJS",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/silnose/c-jest-react.git"
+  },
+  "author": "silnose",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/silnose/c-jest-react/issues"
+  },
+  "homepage": "https://github.com/silnose/c-jest-react#readme",
+  "devDependencies": {
+    "jest": "^26.5.2"
+  }
+}
