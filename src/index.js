@@ -1,11 +1,17 @@
-const cities = ['Lima', 'Buenos Aires', 'Mendoza']
+import React from 'react';
+import ReactDOM from 'react-dom';
+import { Provider } from 'react-redux';
+import { createStore } from 'redux';
+import App from './routes/App';
+import reducer from './reducers';
 
-const randomString = () => {
-  const string = cities[Math.floor(Math.random() * cities.length)]
-  return string
-}
-const reverseString = (str, callback) => {
-  callback(str.split('').reverse().join(''))
-}
+import initialState from './initialState';
 
-module.exports = randomString
+const store = createStore(reducer, initialState);
+
+ReactDOM.render(
+  <Provider store={store}>
+    <App />
+  </Provider>,
+  document.getElementById('app'),
+);
