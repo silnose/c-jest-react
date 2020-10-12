@@ -48,9 +48,9 @@ module.exports = () => {
     plugins: [
       new webpack.DefinePlugin({
         PUBLIC_URL:
-          process.env.NODE_ENV === 'production'
-            ? JSON.stringify('/c-jest-react/')
-            : JSON.stringify('/'),
+          process.env.NODE_ENV === 'development'
+            ? JSON.stringify('/')
+            : JSON.stringify('/c-jest-react'),
       }),
       new HtmlWebPackPlugin({
         template: './public/index.html',
