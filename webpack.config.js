@@ -49,7 +49,7 @@ module.exports = () => {
       new webpack.DefinePlugin({
         PUBLIC_URL:
           process.env.NODE_ENV === 'production'
-            ? JSON.stringify('c-jest-react/')
+            ? JSON.stringify('/c-jest-react/')
             : JSON.stringify('/'),
       }),
       new HtmlWebPackPlugin({
