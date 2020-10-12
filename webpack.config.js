@@ -1,7 +1,6 @@
 const path = require('path');
 const HtmlWebPackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const webpack = require('webpack');
 
 module.exports = () => {
   return {
@@ -43,15 +42,11 @@ module.exports = () => {
       ],
     },
     devServer: {
-      historyApiFallback: true,
+      historyApiFallback: {
+        rewrites: [{ from: /\//, to: '/404.html' }],
+      },
     },
     plugins: [
-      new webpack.DefinePlugin({
-        PUBLIC_URL:
-          process.env.NODE_ENV === 'development'
-            ? JSON.stringify('/')
-            : JSON.stringify('/c-jest-react'),
-      }),
       new HtmlWebPackPlugin({
         template: './public/index.html',
         filename: './index.html',
